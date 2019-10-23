@@ -1,0 +1,55 @@
+<div class="col-12">
+  <div class="card border-secondary mb-3">
+    <div class="card-header">Comptes Courant</div>
+    <div class="card-body">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Solde</th>
+            <th>Carte</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let compte of comptes">
+            <th scope="row">{{ compte.code }}</th>
+            <td>{{ compte.solde }}</td>
+            <td>
+              <select
+                class="custom-select"
+                id="inputGroupSelect01"
+                [(ngModel)]="compte.carteType"
+                (change)="updateCarteType(compte)"
+              >
+                <option value="Premier" selected>Premier</option>
+                <option value="Electron">Electron</option>
+              </select>
+            </td>
+            <td>
+              <a
+                routerLink="/comptes/{{ compte.id }}"
+                class="btn btn-primary mr-1"
+                >Details</a
+              >
+              <button
+                class="btn btn-warning mr-1"
+                (click)="onVerser(compte.id, 'cc')"
+                *ngIf="!auth.isGerant()"
+              >
+                Verser
+              </button>
+              <button
+                class="btn btn-warning"
+                (click)="onRetirer(compte.id, 'cc')"
+                *ngIf="!auth.isGerant()"
+              >
+                Retirer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

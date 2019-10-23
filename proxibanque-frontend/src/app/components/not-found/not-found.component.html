@@ -1,0 +1,17 @@
+<main class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert">
+        <strong>404 Not Found : </strong> Le lien que vous demandez n'est pas
+        disponible
+      </div>
+      <a
+        *ngIf="!auth.isAuthenticated()"
+        class="btn  btn-outline-danger"
+        routerLink="/login"
+        role="button"
+        >Se connecter</a
+      >
+    </div>
+  </div>
+</main>

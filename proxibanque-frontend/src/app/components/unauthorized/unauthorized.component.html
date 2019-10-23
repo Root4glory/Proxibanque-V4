@@ -1,0 +1,18 @@
+<main class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-danger" role="alert">
+        <strong>401 Unauthorized : </strong> Vous n'êtes pas autorisé à visiter
+        cette page ou vous ne disposez pas des autorisations appropriées. S'il
+        vous plaît contacter l'administration
+      </div>
+      <a
+        *ngIf="!auth.isAuthenticated()"
+        class="btn btn-lg btn-primary"
+        routerLink="/login"
+        role="button"
+        >Se connecter</a
+      >
+    </div>
+  </div>
+</main>

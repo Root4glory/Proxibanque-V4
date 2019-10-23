@@ -1,0 +1,9 @@
+ma.jit.proxybanque.spring
+ma.jit.proxybanque.spring.dao
+ma.jit.proxybanque.spring.security
+ma.jit.proxybanque.spring.services
+ma.jit.proxybanque.spring.services.jwt
+ma.jit.proxybanque.spring.web.controllers
+ma.jit.proxybanque.spring.web.models
+ma.jit.proxybanque.spring.web.models.jwt
+ma.jit.proxybanque.spring.web.models.tdo

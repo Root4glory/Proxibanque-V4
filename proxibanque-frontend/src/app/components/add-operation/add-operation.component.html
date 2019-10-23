@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-6 ">
+      <h3 class="mt-4">Créer un virment</h3>
+      <hr />
+      <div class="alert alert-warning" role="alert" *ngIf="message">
+        {{ message }}
+      </div>
+      <div class="form-group row">
+        <label for="inputNom" class="col-sm-2 col-form-label">De :</label>
+        <div class="form-group col-md-6">
+          <select
+            class="form-control"
+            [(ngModel)]="operation.compteOne"
+            (change)="onChoiceCompteOne()"
+          >
+            <option *ngFor="let compte of comptesOne" value="{{ compte.id }}">{{
+              compte.code
+            }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPrenom" class="col-sm-2 col-form-label">Vers :</label>
+        <div class="form-group col-md-6">
+          <select
+            (change)="onChoiceCompteTwo()"
+            class="form-control"
+            [(ngModel)]="operation.compteTwo"
+            [disabled]="disabledCompteTwo"
+          >
+            <option *ngFor="let compte of comptesTwo" value="{{ compte.id }}">{{
+              compte.code
+            }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPrenom" class="col-sm-2 col-form-label"
+          >Montant
+        </label>
+        <div class="col-sm-4">
+          <input
+            [disabled]="disabledMontant"
+            type="text"
+            class="form-control"
+            id="inputPrenom"
+            [(ngModel)]="operation.montant"
+          />
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg btn-block"
+        (click)="onAddOperation()"
+        [disabled]="disabledMontant"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

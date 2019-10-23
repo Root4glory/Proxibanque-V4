@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row mt-4 justify-content-center">
+    <h4>{{ compte.code }}</h4>
+  </div>
+  <hr />
+  <div class="row mt-4">
+    <div class="col-4">
+      <div class="card bg-light">
+        <div class="card-header"><h5>Information</h5></div>
+        <div class="card-body">
+          <p>
+            Date de création :
+            <strong>{{ compte.creationDate | date: "d/M/yy, h:mm" }}</strong>
+          </p>
+          <p>
+            Solde : <strong>{{ compte.solde }}</strong>
+          </p>
+          <p>
+            Type de carte : <strong>{{ compte.carteType || "----" }}</strong>
+          </p>
+          <hr />
+          <div class="text-center">
+            <button class="btn btn-danger" (click)="onDeleteCompte()">
+              Suprimmer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="card">
+        <div class="card-header"><h5>Opérations</h5></div>
+        <div class="card-body">
+          <div class="alert alert-warning" role="alert" *ngIf="message">
+            {{ message }}
+          </div>
+          <table class="table table-stripped" *ngIf="!message">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Montant</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let operation of compte.operations">
+                <th scope="row">{{ operation.id }}</th>
+                <td>{{ operation.dateOperation | date: "d/M/yy, h:mm:ss" }}</td>
+                <td>{{ operation.montant }}</td>
+                <td>
+                  <span
+                    class="badge badge-info p-2"
+                    [ngClass]="{
+                      'badge-dark': operation.type === 'Versement'
+                    }"
+                    >{{ operation.type }}</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
