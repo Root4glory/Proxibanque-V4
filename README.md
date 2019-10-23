@@ -1,7 +1,7 @@
 # ProxibanqueV4
 ------------------------------------------------------------------------ProxibanqueV4----------------------------------------------------------------------------------
 
-##Description V4 Le gérant s'identifie grâce à son login et mot de passe. Une fois l'identification réussie s'affiche une page indique les informations sur l'agence
+##Description V4 Le gérant s'identifie grâce à son login et mot de passe(login :hamza password:pass). Une fois l'identification réussie s'affiche une page indique les informations sur l'agence
 
 tel que : Numero de compte de l'agence , date de creation , solde actuel , employe , clients , opération , ainsi opération de dérier mois .
 
@@ -10,7 +10,7 @@ le gérant a le droit de crée et suprimer des coseillers .
 Une erreur d'identification envoie un message d'erreur et le conseiller est invité à renseigner de nouveau ses identifiants. 
 
 
-##Description V4 Le conseiller s'identifie grâce à son login et mot de passe. Une fois l'identification réussie s'affiche sa liste de clients.
+##Description V4 Le conseiller s'identifie grâce à son login et mot de passe(login:med,password:pass). Une fois l'identification réussie s'affiche sa liste de clients.
 
 Une erreur d'identification envoie un message d'erreur et le conseiller est invité à renseigner de nouveau ses identifiants.
 
